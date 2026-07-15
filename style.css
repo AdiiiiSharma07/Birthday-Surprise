@@ -7,36 +7,55 @@
 
 
 body{
-    background:linear-gradient(135deg,#16001f,#55002f);
+
+    background:linear-gradient(135deg,#12001f,#60002f);
     color:white;
     overflow-x:hidden;
+
 }
 
+
+
+/* Common page style */
 
 .page{
+
     min-height:100vh;
+    width:100%;
     display:flex;
-    flex-direction:column;
     justify-content:center;
     align-items:center;
+    flex-direction:column;
     text-align:center;
     padding:20px;
+
 }
 
 
-.one h1{
+
+/* First page */
+
+.first h1{
+
     font-size:45px;
+    margin-bottom:20px;
     animation:glow 2s infinite alternate;
+
 }
 
 
-.one h2{
-    margin:20px;
-    font-size:25px;
+
+.first h2{
+
+    font-size:24px;
+    margin-bottom:40px;
+
 }
+
 
 
 button{
+
     padding:15px 35px;
     border:none;
     border-radius:30px;
@@ -44,82 +63,147 @@ button{
     color:white;
     font-size:18px;
     cursor:pointer;
-    box-shadow:0 0 20px #ff4f9a;
+    box-shadow:0 0 25px #ff4f9a;
+    transition:.3s;
+
 }
 
 
 button:hover{
+
     transform:scale(1.1);
+
 }
 
 
 
-.two{
+
+/* Second page */
+
+.second{
+
     display:none;
-}
-
-
-.gallery{
-
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
-    width:95%;
-    margin-top:30px;
 
 }
 
 
-.gallery img{
 
-    width:100%;
-    height:220px;
+.second h1{
+
+    font-size:40px;
+    margin-bottom:25px;
+
+}
+
+
+
+.memory-container{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+}
+
+
+
+#memoryImage{
+
+    width:90%;
+    max-width:360px;
+    height:500px;
     object-fit:cover;
-    border-radius:20px;
-    box-shadow:0 0 20px rgba(255,255,255,.3);
-    transition:.5s;
-
-}
-
-
-.gallery img:hover{
-
-    transform:scale(1.05);
+    border-radius:25px;
+    box-shadow:0 0 30px rgba(255,255,255,.4);
+    cursor:pointer;
+    animation:fade .8s;
 
 }
 
 
 
-.message{
-    margin-top:15px;
-    font-size:18px;
+#memoryNote{
+
+    margin-top:25px;
+    font-size:20px;
+    padding:0 20px;
+    line-height:1.5;
+
 }
 
 
-.end{
+
+.tap{
+
+    margin-top:20px;
+    opacity:.8;
+    font-size:15px;
+
+}
+
+
+
+#finalMessage{
+
+    display:none;
     margin-top:40px;
+    font-size:25px;
+
 }
 
+
+
+
+
+/* Animations */
 
 
 @keyframes glow{
 
 from{
+
 text-shadow:0 0 10px pink;
+
 }
 
 to{
+
 text-shadow:0 0 30px white;
-}
 
 }
 
+}
+
+
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+transform:scale(.8);
+
+}
+
+to{
+
+opacity:1;
+transform:scale(1);
+
+}
+
+}
+
+
+
+
+/* Floating hearts */
 
 
 .heart{
 
 position:fixed;
-bottom:-10px;
+bottom:-20px;
 font-size:25px;
 animation:float 6s linear infinite;
 
@@ -130,13 +214,18 @@ animation:float 6s linear infinite;
 @keyframes float{
 
 0%{
+
 transform:translateY(0);
 opacity:1;
+
 }
 
+
 100%{
+
 transform:translateY(-100vh);
 opacity:0;
+
 }
 
 }
