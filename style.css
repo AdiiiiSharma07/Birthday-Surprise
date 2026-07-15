@@ -1,96 +1,142 @@
-/* ===== Happy Birthday Beautiful ===== */
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+    font-family:'Segoe UI',sans-serif;
 }
+
 
 body{
-    background:linear-gradient(135deg,#ffdde1,#ee9ca7);
-    overflow-x:hidden;
+    background:linear-gradient(135deg,#16001f,#55002f);
     color:white;
-    text-align:center;
+    overflow-x:hidden;
 }
 
-.loading-screen{
-    height:100vh;
+
+.page{
+    min-height:100vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    background:linear-gradient(180deg,#ff9ecb,#ffcce5);
+    text-align:center;
+    padding:20px;
 }
 
-.loading-screen h1{
-    font-size:32px;
-    margin-bottom:30px;
-    text-shadow:0 0 20px white;
-    animation:fadeIn 2s ease;
+
+.one h1{
+    font-size:45px;
+    animation:glow 2s infinite alternate;
 }
 
-#startBtn{
-    padding:18px 35px;
+
+.one h2{
+    margin:20px;
+    font-size:25px;
+}
+
+
+button{
+    padding:15px 35px;
     border:none;
-    border-radius:50px;
-    background:white;
-    color:#ff4f87;
-    font-size:20px;
+    border-radius:30px;
+    background:#ff4f9a;
+    color:white;
+    font-size:18px;
     cursor:pointer;
-    font-weight:bold;
-    transition:.4s;
+    box-shadow:0 0 20px #ff4f9a;
 }
 
-#startBtn:hover{
+
+button:hover{
     transform:scale(1.1);
 }
 
-.birthday-page{
-    padding:30px 20px;
+
+
+.two{
+    display:none;
 }
 
-.birthday-page h1{
-    font-size:38px;
-    margin-top:30px;
-    margin-bottom:15px;
-}
-
-.birthday-page p{
-    font-size:20px;
-    margin-bottom:35px;
-}
 
 .gallery{
+
     display:grid;
     grid-template-columns:repeat(2,1fr);
     gap:15px;
-    margin-bottom:40px;
+    width:95%;
+    margin-top:30px;
+
 }
+
 
 .gallery img{
+
     width:100%;
+    height:220px;
+    object-fit:cover;
     border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.3);
-    transition:.4s;
+    box-shadow:0 0 20px rgba(255,255,255,.3);
+    transition:.5s;
+
 }
+
 
 .gallery img:hover{
+
     transform:scale(1.05);
+
 }
 
-h2,h3{
+
+
+.message{
     margin-top:15px;
-    line-height:1.6;
+    font-size:18px;
 }
 
-@keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+
+.end{
+    margin-top:40px;
+}
+
+
+
+@keyframes glow{
+
+from{
+text-shadow:0 0 10px pink;
+}
+
+to{
+text-shadow:0 0 30px white;
+}
+
+}
+
+
+
+.heart{
+
+position:fixed;
+bottom:-10px;
+font-size:25px;
+animation:float 6s linear infinite;
+
+}
+
+
+
+@keyframes float{
+
+0%{
+transform:translateY(0);
+opacity:1;
+}
+
+100%{
+transform:translateY(-100vh);
+opacity:0;
+}
+
 }
