@@ -107,203 +107,14 @@ button:hover{
 
 
 
-/* Memory Photo Frame */
-
-.photo-frame{
-
-    position:relative;
-    width:90%;
-    max-width:360px;
-    padding:20px;
-    border-radius:30px;
-    overflow:hidden;
-    background:rgba(255,255,255,0.15);
-    box-shadow:0 0 30px rgba(255,255,255,.4);
-
-}
-
-
-
-#bgImage{
-
-    position:absolute;
-    inset:0;
-    background-size:cover;
-    background-position:center;
-    filter:blur(15px);
-    opacity:.5;
-    transform:scale(1.2);
-
-}
-
-
-
 #memoryImage{
 
-    position:relative;
-    z-index:2;
-    width:100%;
-    height:420px;
-    object-fit:cover;
-    border-radius:20px;
-    cursor:pointer;
-    animation:fade .8s;
-
-}
-
-
-
-#memoryNote{
-
-    position:relative;
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
-}
-
-
-body{
-
-    min-height:100vh;
-    background:linear-gradient(135deg,#16001f,#70003d);
-    color:white;
-    overflow-x:hidden;
-
-}
-
-
-
-.page{
-
-    min-height:100vh;
-    width:100%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:20px;
-
-}
-
-
-
-/* FIRST PAGE */
-
-.first h1{
-
-    font-size:45px;
-    animation:glow 2s infinite alternate;
-
-}
-
-
-.first h2{
-
-    margin:25px 0 40px;
-    font-size:24px;
-
-}
-
-
-
-button{
-
-    padding:16px 40px;
-    border:none;
-    border-radius:40px;
-    background:#ff4f9a;
-    color:white;
-    font-size:18px;
-    cursor:pointer;
-    box-shadow:0 0 30px #ff4f9a;
-    transition:.3s;
-
-}
-
-
-button:hover{
-
-    transform:scale(1.1);
-
-}
-
-
-
-
-/* SECOND PAGE */
-
-.second{
-
-    display:none;
-
-}
-
-
-
-.second h1{
-
-    font-size:40px;
-    margin-bottom:25px;
-
-}
-
-
-
-
-.memory-container{
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-
-}
-
-
-
-/* PHOTO OUTER FRAME */
-
-
-.photo-frame{
-
-    position:relative;
     width:90%;
     max-width:360px;
-    padding:18px;
-    border-radius:35px;
-    overflow:hidden;
-    background:rgba(255,255,255,.15);
-    box-shadow:0 0 35px rgba(255,255,255,.5);
-
-}
-
-
-
-#bgImage{
-
-    position:absolute;
-    inset:0;
-    background-size:cover;
-    background-position:center;
-    filter:blur(18px);
-    opacity:.55;
-    transform:scale(1.2);
-
-}
-
-
-
-
-#memoryImage{
-
-    position:relative;
-    z-index:2;
-    width:100%;
-    height:450px;
+    height:500px;
     object-fit:cover;
     border-radius:25px;
+    box-shadow:0 0 30px rgba(255,255,255,.4);
     cursor:pointer;
     animation:fade .8s;
 
@@ -311,14 +122,11 @@ button:hover{
 
 
 
-
 #memoryNote{
 
-    position:relative;
-    z-index:3;
-    margin-top:20px;
-    padding:0 10px;
-    font-size:19px;
+    margin-top:25px;
+    font-size:20px;
+    padding:0 20px;
     line-height:1.5;
 
 }
@@ -327,11 +135,11 @@ button:hover{
 
 .tap{
 
-    margin-top:25px;
+    margin-top:20px;
     opacity:.8;
+    font-size:15px;
 
 }
-
 
 
 
@@ -346,45 +154,8 @@ button:hover{
 
 
 
-/* HEARTS */
 
-
-.heart{
-
-    position:fixed;
-    bottom:-20px;
-    font-size:25px;
-    animation:float 6s linear forwards;
-    z-index:10;
-
-}
-
-
-
-
-@keyframes float{
-
-    from{
-
-        transform:translateY(0);
-        opacity:1;
-
-    }
-
-
-    to{
-
-        transform:translateY(-110vh);
-        opacity:0;
-
-    }
-
-}
-
-
-
-
-/* ANIMATIONS */
+/* Animations */
 
 
 @keyframes glow{
@@ -397,12 +168,11 @@ text-shadow:0 0 10px pink;
 
 to{
 
-text-shadow:0 0 35px white;
+text-shadow:0 0 30px white;
 
 }
 
 }
-
 
 
 
@@ -411,10 +181,9 @@ text-shadow:0 0 35px white;
 from{
 
 opacity:0;
-transform:scale(.85);
+transform:scale(.8);
 
 }
-
 
 to{
 
@@ -423,4 +192,40 @@ transform:scale(1);
 
 }
 
-        }
+}
+
+
+
+
+/* Floating hearts */
+
+
+.heart{
+
+position:fixed;
+bottom:-20px;
+font-size:25px;
+animation:float 6s linear infinite;
+
+}
+
+
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0);
+opacity:1;
+
+}
+
+
+100%{
+
+transform:translateY(-100vh);
+opacity:0;
+
+}
+
+}
