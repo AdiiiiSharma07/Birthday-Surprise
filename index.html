@@ -1,64 +1,111 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Birthday Surprise ❤️</title>
-    <link rel="stylesheet" href="style.css">
+
+<title>Birthday Surprise ❤️</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-<div class="hearts"></div>
 
-<section class="page one">
-    <h1>Hey Beautiful ❤️</h1>
-    <h2>I Have A Little Surprise For You ✨</h2>
+<!-- Floating hearts -->
 
-    <button onclick="openSurprise()">
-        Open Your Surprise 💝
-    </button>
+<div id="hearts"></div>
+
+
+
+<!-- PAGE 1 -->
+
+<section class="page first" id="firstPage">
+
+
+<h1>Hey Beautiful ❤️</h1>
+
+
+<h2>
+I Have A Little Surprise For You ✨
+</h2>
+
+
+
+<button onclick="openSurprise()">
+
+Open Your Surprise 💝
+
+</button>
+
+
 </section>
 
 
-<section class="page two" id="gallery">
-
-    <h1>Happy Birthday ❤️</h1>
-
-    <p class="message">
-        Every picture has a memory,
-        and every memory has you ✨
-    </p>
 
 
-    <div class="gallery">
 
-        
-      <div class="gallery">
+<!-- PAGE 2 -->
 
-    <img src="images/IMG_20251129_231848_096.jpg" alt="Memory 1">
-    <img src="images/IMG-20250920-WA0004.jpg" alt="Memory 2">
-    <img src="images/IMG-20260430-WA0007.jpg" alt="Memory 3">
-    <img src="images/IMG_20250905_222405_203.jpg" alt="Memory 4">
-    <img src="images/IMG-20251021-WA0070.jpg" alt="Memory 5">
-    <img src="images/IMG-20250903-WA0007.jpg" alt="Memory 6">
-    <img src="images/IMG-20260305-WA0011.jpg" alt="Memory 7">
-    <img src="images/IMG-20260109-WA0019.jpg" alt="Memory 8">
-    <img src="images/IMG-20260109-WA0128.jpg" alt="Memory 9">
-    <img src="images/IMG-20251003-WA0005.jpg" alt="Memory 10">
+<section class="page second" id="secondPage">
+
+
+<h1>
+Happy Birthday ❤️
+</h1>
+
+
+
+<div class="memory-container">
+
+
+<img id="memoryImage" 
+src="images/IMG_20251129_231848_096.jpg"
+onclick="nextMemory()">
+
+
+
+<p id="memoryNote">
+
+A beautiful memory that will always stay special ❤️
+
+</p>
+
+
+
+<p class="tap">
+
+Tap the photo for the next memory ✨
+
+</p>
+
+
 
 </div>
-    
-
-    </div>
 
 
-    <h2 class="end">
-        Thank you for being a beautiful part of my life ❤️
-    </h2>
+
+
+
+<h2 id="finalMessage">
+
+Thank you for being a beautiful part of my life ❤️
+
+</h2>
+
+
 
 </section>
+
+
 
 
 <script src="script.js"></script>
 
+
 </body>
+
 </html>
