@@ -19,23 +19,23 @@ let notes = [
 
 "Every picture has a beautiful story ❤️",
 
-"A small moment, but a forever memory ✨",
+"A small moment that became a precious memory ✨",
 
-"Your smile makes every memory special 💕",
+"Your smile makes every picture special 💕",
 
-"Some moments are truly unforgettable 🌸",
+"Some memories are always close to the heart 🌸",
 
-"Another beautiful chapter of memories ❤️",
+"Another beautiful chapter of our memories ❤️",
 
-"These little moments mean a lot ✨",
+"These moments will always be special ✨",
 
-"A memory that will always stay close to my heart 💖",
+"A memory that I will always treasure 💖",
 
 "Every picture brings back happiness 🌹",
 
-"Forever special and always remembered ❤️",
+"Forever special and unforgettable ❤️",
 
-"Thank you for being such a beautiful part of my life ✨"
+"Thank you for being a beautiful part of my life ✨"
 
 ];
 
@@ -43,7 +43,19 @@ let notes = [
 
 let current = 0;
 
+let heartTimer;
 
+
+
+// Set first background
+
+document.getElementById("bgImage").style.backgroundImage =
+"url('" + photos[0] + "')";
+
+
+
+
+// Open surprise
 
 function openSurprise(){
 
@@ -58,7 +70,127 @@ stopHearts();
 
 
 
+// Change photo
+
 function nextMemory(){
+
+
+current++;
+
+
+if(current < photos.length){
+
+
+let image=document.getElementById("memoryImage");
+
+
+image.style.animation="none";
+
+
+setTimeout(()=>{
+
+
+image.src=photos[current];
+
+
+document.getElementById("bgImage").style.backgroundImage =
+"url('" + photos[current] + "')";
+
+
+document.getElementById("memoryNote").innerHTML =
+notes[current];
+
+
+image.style.animation="fade .8s";
+
+
+},50);
+
+
+
+}
+
+else{
+
+
+document.getElementById("memoryImage").style.display="none";
+
+document.getElementById("bgImage").style.display="none";
+
+document.getElementById("memoryNote").style.display="none";
+
+document.querySelector(".tap").style.display="none";
+
+
+document.getElementById("finalMessage").style.display="block";
+
+
+startHearts();
+
+
+}
+
+
+
+}
+
+
+
+
+// Hearts
+
+function createHeart(){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+
+heart.style.left=Math.random()*100+"vw";
+
+
+heart.style.animationDuration =
+(3+Math.random()*4)+"s";
+
+
+document.getElementById("heartContainer")
+.appendChild(heart);
+
+
+
+setTimeout(()=>{
+
+heart.remove();
+
+},6000);
+
+
+}
+
+
+
+function startHearts(){
+
+heartTimer=setInterval(createHeart,300);
+
+}
+
+
+
+function stopHearts(){
+
+clearInterval(heartTimer);
+
+}
+
+
+
+
+// Start hearts on first page
+
+startHearts();
 
 
 current++;
