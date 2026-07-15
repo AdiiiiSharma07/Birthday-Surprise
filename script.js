@@ -76,8 +76,10 @@ setTimeout(()=>{
 
 image.src = photos[current];
 
-document.getElementById("memoryNote").innerHTML = notes[current];
+document.getElementById("bgImage").style.backgroundImage =
+"url('" + photos[current] + "')";
 
+document.getElementById("memoryNote").innerHTML = notes[current];
 image.style.animation="fade .8s";
 
 
