@@ -134,6 +134,106 @@ heart.remove();
 }
 
 
+setInterval(createHeart,300);
+"Thank you for being such a beautiful part of my life ✨"
+
+];
+
+
+
+let current = 0;
+
+
+
+function openSurprise(){
+
+document.getElementById("firstPage").style.display="none";
+
+document.getElementById("secondPage").style.display="flex";
+
+}
+
+
+
+
+function nextMemory(){
+
+
+current++;
+
+
+if(current < photos.length){
+
+
+let image = document.getElementById("memoryImage");
+
+
+image.style.animation="none";
+
+setTimeout(()=>{
+
+image.src = photos[current];
+
+document.getElementById("memoryNote").innerHTML = notes[current];
+
+image.style.animation="fade .8s";
+
+
+},50);
+
+
+}
+
+
+
+else{
+
+
+document.getElementById("memoryImage").style.display="none";
+
+document.getElementById("memoryNote").style.display="none";
+
+document.querySelector(".tap").style.display="none";
+
+document.getElementById("finalMessage").style.display="block";
+
+
+}
+
+
+}
+
+
+
+
+// Floating hearts
+
+function createHeart(){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=(3+Math.random()*4)+"s";
+
+
+document.body.appendChild(heart);
+
+
+setTimeout(()=>{
+
+heart.remove();
+
+},6000);
+
+
+}
+
+
 setInterval(createHeart,300);    const note=document.getElementById("memoryNote");
 
     img.style.opacity="0";
