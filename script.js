@@ -27,14 +27,63 @@ const notes = [
 let current = 0;
 
 function openSurprise(){
+    document.getElementById("firstPage").style.display="none";
+    document.getElementById("secondPage").style.display="flex";
+    showMemory();
+}
 
-document.getElementById("firstPage").style.display="none";
-document.getElementById("secondPage").style.display="flex";
+function showMemory(){
+    const img=document.getElementById("memoryImage");
+    const note=document.getElementById("memoryNote");
 
-showMemory();
+    img.style.opacity="0";
+
+    setTimeout(()=>{
+        img.src=photos[current];
+        note.innerHTML=notes[current];
+        img.style.opacity="1";
+    },300);
+}
+
+function nextMemory(){
+
+    current++;
+
+    if(current<photos.length){
+
+        showMemory();
+
+    }else{
+
+        document.querySelector(".memory-container").style.display="none";
+
+        document.getElementById("finalMessage").style.display="block";
+
+    }
 
 }
 
+function createHeart(){
+
+    const heart=document.createElement("div");
+
+    heart.className="heart";
+
+    heart.innerHTML=["❤️","💖","💕","💗"][Math.floor(Math.random()*4)];
+
+    heart.style.left=Math.random()*100+"vw";
+
+    heart.style.animationDuration=(4+Math.random()*3)+"s";
+
+    document.getElementById("hearts").appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },7000);
+
+}
+
+setInterval(createHeart,350);
 function showMemory(){
 
 const img=document.getElementById("memoryImage");
